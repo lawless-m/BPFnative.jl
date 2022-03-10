@@ -12,6 +12,6 @@ makedocs(
 
 deploydocs(
     repo = "github.com/lawless-m/BPFnative.jl.git", 
-    devbranch = "master",
-    push_preview = true,
+ #   devbranch = "master",
+ #   push_preview = true,
 )

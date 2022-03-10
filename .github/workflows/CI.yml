@@ -5,18 +5,28 @@ on:
       - master
     tags: '*'
   pull_request:
+# not sure about this, copy & paste job  
+concurrency:
+  # Skip intermediate builds: always.
+  # Cancel intermediate builds: only if it is a pull request build.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+# this was here but not in my versions  
 defaults:
   run:
     shell: bash
+# proceed as normal
 jobs:
-  CI-julia-1-6-nightly:
-    name: CI-julia-1-6-nightly
-    runs-on: ${{ matrix.os }}
+  CI:
+    name: CI
+    name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
     strategy:
       fail-fast: false
       matrix:
         version:
           - '1.6-nightly'
+          - '1.7'
+          - 'nightly'
         os:
           - ubuntu-latest
           - macOS-latest

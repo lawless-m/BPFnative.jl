@@ -1,5 +1,8 @@
 export BPFCmd, BPFMapType, BPFProgType, BPFAttachType, BPFHelper
 
+"""
+    BPFcmd list
+"""
 @enum BPFCmd begin
     BPF_MAP_CREATE
     BPF_MAP_LOOKUP_ELEM
@@ -33,6 +36,9 @@ export BPFCmd, BPFMapType, BPFProgType, BPFAttachType, BPFHelper
     BPF_LINK_UPDATE
 end
 
+"""
+    BPFMapType map type list
+"""
 @enum BPFMapType begin
     BPF_MAP_TYPE_UNSPEC
     BPF_MAP_TYPE_HASH
@@ -63,6 +69,9 @@ end
     BPF_MAP_TYPE_STRUCT_OPS
 end
 
+"""
+    BPFProgType Prog Type list
+"""
 @enum BPFProgType begin
     BPF_PROG_TYPE_UNSPEC
     BPF_PROG_TYPE_SOCKET_FILTER
@@ -96,6 +105,9 @@ end
     BPF_PROG_TYPE_LSM
 end
 
+"""
+    BPFAttachType 
+"""
 @enum BPFAttachType begin
     BPF_CGROUP_INET_INGRESS
     BPF_CGROUP_INET_EGRESS
@@ -127,6 +139,9 @@ end
     BPF_LSM_MAC
 end
 
+"""
+    BPFHelper
+"""
 @enum BPFHelper begin
     unspec
     map_lookup_elem

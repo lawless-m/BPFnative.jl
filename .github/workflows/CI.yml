@@ -18,7 +18,6 @@ defaults:
 # proceed as normal
 jobs:
   CI:
-    name: CI
     name: Julia ${{ matrix.version }} - ${{ matrix.os }} - ${{ matrix.arch }} - ${{ github.event_name }}
     strategy:
       fail-fast: false

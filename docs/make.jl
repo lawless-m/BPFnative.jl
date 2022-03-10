@@ -5,7 +5,7 @@ using Dates
 
 makedocs(
     modules = [BPFnative],
-    sitename="BPFnative.jl", 
+    sitename= "BPFnative.jl", 
     authors = "Julian Samaroo",
     format = Documenter.HTML(),
 )
